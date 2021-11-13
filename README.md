@@ -24,3 +24,8 @@ git clone https://github.com/ros-drivers/usb_cam.git
 ```c
 git clone https://github.com/ros-perception/image_common.git
 ```
+
+## 입력 명령어
+```c
+roslaunch teleop_key play.launch
+```
