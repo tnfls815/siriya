@@ -2,7 +2,7 @@
 
 ## 설치
 ```c
-
+git clone https://github.com/tnfls815/siriya_PI.git
 ```
 
 ## 이 외 필요 패키지
