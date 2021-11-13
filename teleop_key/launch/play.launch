@@ -1,0 +1,32 @@
+<launch>
+  <node name="teleop_key_sub" pkg="teleop_key" type="teleop_key_sub" output="screen" >
+  </node>
+  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="320" />
+    <param name="pixel_format" value="rgb24" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+  <node pkg="e2box_imu" type="e2box_imu_node" name="e2box_imu_node" output="screen">
+    <param name="port" type="string" value="/dev/ttyUSB1" />
+    <param name="baudrate" type="int" value="115200" />
+  </node>
+  <node name="ydlidar_node"  pkg="ydlidar"  type="ydlidar_node" output="screen" respawn="false" >
+    <param name="port"         type="string" value="/dev/ttyUSB0"/>  
+    <param name="baudrate"     type="int"    value="256000"/>
+    <param name="frame_id"     type="string" value="laser_frame"/>
+    <param name="low_exposure"  type="bool"   value="false"/>
+    <param name="resolution_fixed"    type="bool"   value="true"/>
+    <param name="auto_reconnect"    type="bool"   value="true"/>
+    <param name="reversion"    type="bool"   value="false"/>
+    <param name="angle_min"    type="double" value="-180" />
+    <param name="angle_max"    type="double" value="180" />
+    <param name="range_min"    type="double" value="0.1" />
+    <param name="range_max"    type="double" value="16.0" />
+    <param name="ignore_array" type="string" value="" />
+    <param name="samp_rate"    type="int"    value="9"/>
+    <param name="frequency"    type="double" value="7"/>
+  </node>
+</launch>
