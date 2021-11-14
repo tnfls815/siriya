@@ -1,4 +1,5 @@
 # siriya_PI
+https://www.notion.so/c6fcc20188f1493285f9cea02ad84261
 
 ## 설치
 ```c
